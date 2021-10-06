@@ -10,18 +10,21 @@ function App() {
       amount: 449.99,
       date: new Date(2020, 7, 14),
     },
+
     {
       id: "e2",
       title: "FIFA 22",
       amount: 59.99,
       date: new Date(2021, 2, 12),
     },
+
     {
       id: "e3",
       title: "Car Payment",
       amount: 200,
       date: new Date(2021, 2, 28),
     },
+
     {
       id: "e4",
       title: "Dog food",
@@ -30,9 +33,18 @@ function App() {
     },
   ];
 
+  const newExpenseCreated = function (savedData) {
+    const data = {
+      ...savedData,
+    };
+
+    console.log(data);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={newExpenseCreated} />
+
       <Expenses data={expenses} />
     </div>
   );
