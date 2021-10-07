@@ -6,12 +6,10 @@ function NewExpense(props) {
   const saveExpenseDataHandler = function (expenseData) {
     const data = {
       ...expenseData,
-
       id: Math.random().toString(),
     };
 
     // Hoist data to app.js
-
     props.onAddExpense(data);
   };
 
