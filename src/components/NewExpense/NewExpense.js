@@ -3,8 +3,10 @@ import ExpenseForm from "./ExpenseForm";
 import { useState } from "react";
 
 function NewExpense(props) {
+  // create state for add expense btn
   const [clicked, setClicked] = useState(false);
 
+  // executed on form submit
   const saveExpenseDataHandler = function (expenseData) {
     const data = {
       ...expenseData,
@@ -19,11 +21,14 @@ function NewExpense(props) {
     setClicked(false);
   };
 
+  // shows form
   const showExpenseForm = function () {
     setClicked(true);
   };
 
+  // hides form
   const expenseFormFalse = function () {
+    console.log("executed");
     setClicked(false);
   };
 

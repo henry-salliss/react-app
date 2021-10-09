@@ -24,12 +24,13 @@ function ExpenseForm(props) {
 
     const data = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
-
+    // hoist data up to newExpense
     props.onSaveExpenseData(data);
 
+    // Reset values
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
